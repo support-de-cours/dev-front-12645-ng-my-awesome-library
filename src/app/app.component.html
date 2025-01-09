@@ -1,15 +1,16 @@
 <div class="container">
   <h1>My Awesome Library</h1>
 
-  <nav>
-    <a routerLink="/homepage">Homepage</a> - 
-    <a routerLink="/about">About</a> - 
-    <a routerLink="/contact">Contact</a> - 
-    <a routerLink="/books-m">Books (module)</a>
-    <a routerLink="/books-c">Books (component)</a>
-  </nav>
+  <component-navbar [navmenu]="menu"/>
+
   <hr>
 
   <router-outlet />
+
+  <hr>
+
+  <app-id-card username="Bob"/>
+  <app-id-card [username]="'Jane'"/>
+  <app-id-card [username]="user_name"/>
 
 </div>

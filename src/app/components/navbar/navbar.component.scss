@@ -1,0 +1,13 @@
+@use "sass:color";
+
+$text-color: color.mix(#FFFFFF, red, 60%);
+
+a {
+    text-decoration: none;
+    padding: 1rem;
+
+    &:hover {
+        background-color: $text-color;
+        color: white;
+    }
+}

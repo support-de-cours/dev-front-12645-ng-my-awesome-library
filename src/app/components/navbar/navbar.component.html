@@ -1,0 +1,15 @@
+<!-- 
+<nav>
+    <a routerLink="/homepage">Homepage</a> - 
+    <a routerLink="/about">About</a> - 
+    <a routerLink="/contact">Contact</a> - 
+    <a routerLink="/books-m">Books (module)</a> - 
+    <a routerLink="/books-c">Books (component)</a>
+</nav>
+-->
+
+<nav>
+    @for (item of navmenu; track item) {
+        <a [routerLink]="item.path">{{ item.label }}</a>
+    }
+</nav>
