@@ -52,49 +52,49 @@ export const routes: Route[] = [
 
 
 
-    {
-        path: 'books',
-        children: [
+    // {
+    //     path: 'books',
+    //     children: [
 
-            // Index - liste des livres
-            {
-                path: '', // site.com/books/
-                component: IndexComponent
-            },
+    //         // Index - liste des livres
+    //         {
+    //             path: '', // site.com/books/
+    //             component: IndexComponent
+    //         },
             
-            // Create - Ajouter un livre
-            {
-                path: 'create', // site.com/books/create
-                component: CreateComponent
-            },
+    //         // Create - Ajouter un livre
+    //         {
+    //             path: 'create', // site.com/books/create
+    //             component: CreateComponent
+    //         },
             
-            // Read - Voir le détail d'un livre
-            {
-                path: ':id',
-                children: [
+    //         // Read - Voir le détail d'un livre
+    //         {
+    //             path: ':id',
+    //             children: [
                     
-                    {
-                        path: '', // site.com/42/
-                        component: ReadComponent
-                    },
+    //                 {
+    //                     path: '', // site.com/42/
+    //                     component: ReadComponent
+    //                 },
 
-                    // Update - Editer un livre
-                    {
-                        path: 'edit', // site.com/42/edit
-                        component: UpdateComponent
-                    },
+    //                 // Update - Editer un livre
+    //                 {
+    //                     path: 'edit', // site.com/42/edit
+    //                     component: UpdateComponent
+    //                 },
                 
-                    // Delete - supprimer un livre
-                    {
-                        path: 'delete', // site.com/42/delete
-                        component: DeleteComponent
-                    }
+    //                 // Delete - supprimer un livre
+    //                 {
+    //                     path: 'delete', // site.com/42/delete
+    //                     component: DeleteComponent
+    //                 }
 
-                ]
-            }
+    //             ]
+    //         }
 
-        ]
-    }
+    //     ]
+    // }
 
 
 
@@ -110,14 +110,44 @@ export const routes: Route[] = [
 
 
     // Index - liste des livres
-    
-    // Create - Ajouter un livre
-    
-    // Read - Voir le détail d'un livre
-    
-    // Update - Editer un livre
-    
-    // Delete - supprimer un livre
-    
+    {
+        path: 'books',
+        component: IndexComponent
+    },
+
+    {
+        path: 'book',
+        children: [
+
+            {
+                path: '',
+                component: CreateComponent
+            },
+            
+            // Read - Voir le détail d'un livre
+            {
+                path: ':id', 
+                children: [
+                    // Create - Ajouter un livre
+                    {
+                        path: '',
+                        component: ReadComponent
+                    },
+
+                    // Update - Editer un livre
+                    {
+                        path: 'edit',
+                        component: UpdateComponent
+                    },
+                    
+                    // Delete - supprimer un livre
+                    {
+                        path: 'delete',
+                        component: DeleteComponent
+                    }
+                ]
+            }
+        ]
+    }
     
 ];
